@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ScreenData />} />
         <Route path="/form" element={<ScreenForm />} />
+        <Route path="/form/:index" element={<ScreenForm />} />
       </Routes>
     </Router>
   );

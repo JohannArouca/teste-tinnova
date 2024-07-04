@@ -1,8 +1,14 @@
 import React from "react";
 import { maskCPF, maskPhone } from "../../utils/masks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./Table.scss";
 
-function Table({ data, onDelete }) {
+function Table({ data, onDelete, onEdit }) {
+  const editItem = (index) => {
+    onEdit(index);
+  };
+  
   const deleteItem = (index) => {
     onDelete(index);
   };
@@ -25,8 +31,13 @@ function Table({ data, onDelete }) {
             <td>{maskCPF(row.cpf)}</td>
             <td>{maskPhone(row.phone)}</td>
             <td>{row.email}</td>
-            <td>
-              <button onClick={() => deleteItem(index)}>Excluir</button>
+            <td  className="actions">
+            <button className="action-button" onClick={() => editItem(index)}>
+                <FontAwesomeIcon icon={faEdit} />
+              </button>
+              <button className="action-button" onClick={() => deleteItem(index)}>
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
             </td>
           </tr>
         ))}

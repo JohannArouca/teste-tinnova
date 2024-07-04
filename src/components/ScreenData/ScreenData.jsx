@@ -39,8 +39,9 @@ function ScreenData() {
     setUsers(updatedData);
   };
 
-  const navigateToForm = () => {
-    navigate("/form");
+  const editUser = (index) => {
+    const userToEdit = users[index];
+    navigate(`/form/${index}`, { state: { user: userToEdit } });
   };
 
   return (
@@ -49,9 +50,9 @@ function ScreenData() {
         <Button
           className="register-button"
           label="Cadastrar"
-          onClick={navigateToForm}
+          onClick={() => navigate("/form")}
         />
-        <Table data={users} onDelete={deleteUser} />
+        <Table data={users} onDelete={deleteUser} onEdit={editUser} />
       </div>
     </div>
   );
