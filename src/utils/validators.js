@@ -37,5 +37,5 @@ export const validateCPF = (cpf) => {
 
 export const validatePhone = (phone) => {
   const cleanPhone = phone.replace(/\D/g, "");
-  return cleanPhone.length === 11;
+  return cleanPhone.length === 10;
 };
