@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './Input.scss';
 
-function Input({ label }) {
+function Input({ label, name, value, onChange }) {
   const [focused, setFocused] = useState(false);
-  const [value, setValue] = useState('');
 
   const handleFocus = () => {
     setFocused(true);
@@ -15,17 +14,14 @@ function Input({ label }) {
     }
   };
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
   return (
     <div className={`input-container ${focused || value ? 'focus' : ''}`}>
       <input
         type="text"
         className="input-field"
         value={value}
-        onChange={handleChange}
+        name={name}
+        onChange={onChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
