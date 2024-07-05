@@ -33,10 +33,12 @@ $button-color: #00c8b3;
       border: none;
       cursor: pointer;
       color: $button-color;
-      transition: opacity 0.3s ease, color 0.3s ease;
+      transition:
+        opacity 0.3s ease,
+        color 0.3s ease;
 
       &:hover {
-          opacity: 0.7;
+        opacity: 0.7;
       }
     }
   }

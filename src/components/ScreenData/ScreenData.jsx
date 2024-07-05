@@ -48,7 +48,6 @@ function ScreenData() {
     <div className="screen-container">
       <div className="card">
         <Button
-          className="register-button"
           label="Cadastrar"
           onClick={() => navigate("/form")}
         />
